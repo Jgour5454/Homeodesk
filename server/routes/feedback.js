@@ -1,0 +1,12 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const Feedback = require('../models/Feedback');
+const User = require('../models/User');
+const { isNonEmptyString } = require('../utils/validate');
+const { requireAuth, requireRole } = require('../middleware/auth');
+const router = express.Router();
+const CATEGORIES=['treatment','doctor','clinic','online-consultation','general'];
+router.use(requireAuth);
+router.post('/',requireRole('patient'),async(req,res)=>{try{const{rating,category,message,doctorId}=req.body||{};const errors={};const numericRating=Number(rating);if(!Number.isInteger(numericRating)||numericRating<1||numericRating>5)errors.rating='Please choose a rating between 1 and 5.';if(isNonEmptyString(category)&&!CATEGORIES.includes(category))errors.category='Please choose a valid category.';if(!isNonEmptyString(message))errors.message='Please share a few words of feedback.';let doctor;if(doctorId){if(!mongoose.isValidObjectId(doctorId))errors.doctorId='Selected doctor was not found.';else doctor=await User.findOne({_id:doctorId,role:'doctor'});if(!doctor)errors.doctorId='Selected doctor was not found.';}else doctor=await User.findOne({role:'doctor'}).sort({createdAt:1});if(!doctor)errors.doctorId='No doctors are currently registered to receive feedback.';if(Object.keys(errors).length)return res.status(400).json({ok:false,errors});const feedback=await Feedback.create({patientId:req.user._id,patientName:req.user.name,patientEmail:req.user.email,doctorId:doctor._id,doctorName:doctor.name,rating:numericRating,category:isNonEmptyString(category)?category:'general',message:message.trim()});return res.status(201).json({ok:true,feedback});}catch(err){console.error(err);return res.status(500).json({ok:false,error:'Unable to submit feedback.'});}});
+router.get('/',async(req,res)=>{try{const q=req.user.role==='doctor'?{doctorId:req.user._id}:{patientId:req.user._id};const feedback=await Feedback.find(q).sort({createdAt:-1});return res.json({ok:true,feedback});}catch(err){return res.status(500).json({ok:false,error:'Unable to load feedback.'});}});
+module.exports=router;

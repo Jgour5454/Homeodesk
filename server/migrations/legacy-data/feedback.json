@@ -1,0 +1,15 @@
+[
+  {
+    "id": "22a48678-f020-4419-a484-68bab31a042b",
+    "patientId": "1786024633682",
+    "patientName": "Krisha Sabhaya",
+    "patientEmail": "sabhayakrisha34@gmail.com",
+    "doctorId": "1",
+    "doctorName": "Dr. Isha Khimani",
+    "rating": 4,
+    "category": "treatment",
+    "message": "very nice clinic",
+    "createdAt": "2026-08-06T13:57:36.260Z",
+    "updatedAt": "2026-08-06T13:57:36.260Z"
+  }
+]

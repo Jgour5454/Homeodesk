@@ -1,0 +1,49 @@
+[
+  {
+    "id": "2",
+    "name": "Arjun Sharma",
+    "email": "patient@homeodesk.in",
+    "phone": "",
+    "role": "patient",
+    "passwordHash": "002aced19a22ee83c935da92ba486c44:40bac9f28f635b90626555bc4c90c856194c0dcbc7926dbb314b1e6b967177b2daf9c7acff6622e13309685168c1466eb94716d92c80636961e6817b004523c0",
+    "createdAt": "2026-08-05T00:00:00.000Z"
+  },
+  {
+    "id": "1",
+    "name": "Dr. Isha Khimani",
+    "email": "ishakhimani45@doctor.in",
+    "phone": "",
+    "role": "doctor",
+    "passwordHash": "c341308cb3dae3eca1eab74fd7d90346:faeea187db1c11d1abe5600a64d4231eb048b34343e0a2d84fc82d7a715adb2e3750b22a4933950618a08e4e9a5ad9a7e0b507ae28655deeb4ffe39003f7db7b",
+    "createdAt": "2026-08-06T13:50:03.065Z"
+  },
+  {
+    "id": "1786024633682",
+    "name": "Krisha Sabhaya",
+    "email": "sabhayakrisha34@gmail.com",
+    "phone": "9795699898",
+    "role": "patient",
+    "passwordHash": "d3d0f95f5f154567b920e8de887e1360:1ccb5333972b6d4ab00e7dbdaf91007adb1f1573648f1adbe2603033a230f56d1665931a787c6404007a988e644b0faa9245630051852bb66433d4a79d5210b5",
+    "createdAt": "2026-08-06T13:57:13.749Z",
+    "updatedAt": "2026-08-07T04:00:59.761Z"
+  },
+  {
+    "id": "1786073392188",
+    "name": "Test Patient",
+    "email": "testpatient_1786073392188@example.com",
+    "phone": "1234567890",
+    "role": "patient",
+    "passwordHash": "1b22d43a8ac5bc2ca511e238e034e27f:212e92ee18f72f563514974857d9b99aa1e6a8529c5ea22ad1cc1789cc07e87dc3175be44ff57096de39d464fb5b9c5ac201fdb5d55f90211e12eb3c69712f9a",
+    "createdAt": "2026-08-07T03:29:52.256Z",
+    "updatedAt": "2026-08-07T03:29:52.347Z"
+  },
+  {
+    "id": "1786075736402",
+    "name": "isha vyas",
+    "email": "vyasisha15@gmail.com",
+    "phone": "9104429476",
+    "role": "patient",
+    "passwordHash": "94f7c14267d857e43de64d7922369d6e:65ba03430bd1bf9d8d47c3e35b4b02c1c9e2e6d13c92034eb8b27b82d4755745c2bc04b37970569509317abb6d3e4daf99ec5dbb1720327d5e45a08aacce6efc",
+    "createdAt": "2026-08-07T04:08:56.473Z"
+  }
+]
